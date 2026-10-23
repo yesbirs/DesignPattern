@@ -8,7 +8,7 @@ namespace StrategyPattern
 {
     public class NotificationService
     {
-        private INotificationStrategy _notificationStrategy;
+        private readonly INotificationStrategy _notificationStrategy;
 
         public NotificationService(INotificationStrategy notificationStrategy)
         {
