@@ -1,23 +1,9 @@
-﻿// Strategy Pattern: Use a switch expression to handle different cases for a variable.
-using StrategyPattern;
-using DesignPattern;
+﻿using DesignPattern.ObserverPattern;
+using DesignPattern.Strategy;
 
-//var notification = new NotificationService(new EmailNotification());
-//var notification = new NotificationService(new WhatsAppNotification());
-//notification.SendNotification("Your Order has shipped.");
+//Strategy Pattern: The Strategy Pattern is a behavioral design pattern that allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. It lets the algorithm vary independently from clients that use it. In this example, the Strategy Pattern is used to send notifications via different channels (email, SMS, WhatsApp) without changing the client code.
+//StrategyMain.Run();
 
-Console.Write("Choose notification (email/sms/whatsapp): ");
-string? type = Console.ReadLine();
+//Observer Pattern: The Observer Pattern is a behavioral design pattern that allows an object (the subject) to notify a list of dependent objects (observers) about changes in its state. It promotes loose coupling between the subject and observers. In this example, the Observer Pattern is used to notify customers and analytics systems when an order is placed or updated.
 
-try
-{
-    INotificationStrategy strategy = NotificationFactory.CreateNotificationStrategy(type ?? "");
-
-    var notification = new NotificationService(strategy);
-
-    notification.SendNotification("Your order has shipped.");
-}
-catch (ArgumentException ex)
-{
-    Console.WriteLine(ex.Message);
-}
+ObserverMain.Run();

@@ -1,16 +1,16 @@
 ﻿using StrategyPattern;
 
-namespace DesignPattern
+namespace DesignPattern.Strategy
 {
     public static class NotificationFactory
     {
         public static INotificationStrategy CreateNotificationStrategy(string type)
         {
-            return type switch
+            return type.ToLower() switch
             {
-                "WhatsApp" => new WhatsAppNotification(),
-                "Email" => new EmailNotification(),
-                "SMS" => new SMSNotification(),
+                "whatsapp" => new WhatsAppNotification(),
+                "email" => new EmailNotification(),
+                "sms" => new SMSNotification(),
                 _ => throw new ArgumentException("Invalid notification type")
             };
         }
