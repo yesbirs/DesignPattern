@@ -16,6 +16,11 @@ namespace ObserverPattern
             _observers.Add(observer);
         }
 
+        public void Unsubscribe(IOrderObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
         public void ShipOrder()
         {
             // Logic to ship the order

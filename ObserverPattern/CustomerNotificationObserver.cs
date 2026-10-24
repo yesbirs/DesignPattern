@@ -19,7 +19,7 @@ namespace ObserverPattern
         public void OnOrderShipped(int orderId)
         {
             // Implementation for handling order shipped notification
-            _notificationStrategy.Send("Order Has been shipped");
+            _notificationStrategy.Send($"Order Has been shipped {orderId}");
         }
     }
 }
